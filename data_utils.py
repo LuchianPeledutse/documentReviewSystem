@@ -32,8 +32,8 @@ class TextEmbedding:
             B - number of documents in a batch; E - dimension of model vectors 
         """
         NUM_DOCS = len(docs)
-        for i_batch in range(NUM_DOCS//batch_size):
-            docs_tokens = self.tokenizer(docs[i_batch*batch_size:(i_batch+1)*batch_size if (i_batch+1)*batch_size <= NUM_DOCS else NUM_DOCS], return_tensors='pt',
+        for i_batch in range(1, NUM_DOCS//batch_size + 1):
+            docs_tokens = self.tokenizer(docs[(i_batch-1)*batch_size:i_batch*batch_size if i_batch*batch_size <= NUM_DOCS else NUM_DOCS], return_tensors='pt',
                                          padding=True, truncation=True, max_length=max_length)
 
             docs_device_tokens = {k: v.to(device=self.device) for k, v in docs_tokens.items()}
