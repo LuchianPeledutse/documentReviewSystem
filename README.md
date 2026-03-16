@@ -3,4 +3,4 @@ This system is intended to give help to improve educational learning plans. By g
 ## Introduction
 This system is based no RAG
 ## Retriever model results
-This section is for the table for retriever results
+This section is for the table for retriever results.
