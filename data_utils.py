@@ -6,9 +6,12 @@ import torch
 import numpy as np
 import torch.nn as nn
 
+from tqdm import tqdm
+
 from transformers import AutoModel, AutoTokenizer
 
-# Classes
+# CLASSES
+# -------
 
 class TextEmbedding:
     # Given a device and model name implements a method for embedding documents
@@ -56,12 +59,12 @@ def chunk_pdf_file_pages(pdf_path: str, chunk_length: str) -> List[List]:
     pdf_reader = PdfReader(stream = pdf_path)
     # Iterate over pages to chunk each page separately
     chunks_of_pages = []
-    for page in pdf_reader.pages:
+    for page in tqdm(pdf_reader.pages, desc="Going through pdf pages..."):
         page_text = page.extract_text()
         page_text_lines = page_text.split("\n")
         page_chunks = []
         current_line_list = []
-        # Iterate over lines of a page to make chunks
+        # Iterate over lines of a single page to make chunks
         for line in page_text_lines:
             current_line_list.append(line + "\n")
             chunk_candidate = "".join(current_line_list)
