@@ -1,0 +1,30 @@
+{
+    "ML": [
+        "scikit-learn, XGBoost, TensorFlow, PyTorch, Keras, ONNX, FAISS, LightGBM, CatBoost, MLflow",
+        "PyTorch, TensorFlow, scikit-learn, XGBoost, FAISS, ONNX, Ray, Dask, Kubeflow, MLflow",
+        "scikit-learn, XGBoost, LightGBM, CatBoost, TensorFlow, PyTorch, Keras, ONNX, FAISS, MLlib",
+        "PyTorch, TensorFlow, scikit-learn, XGBoost, FAISS, ONNX, Ray, Horovod, Spark MLlib, Kubeflow",
+        "Keras, TensorFlow, PyTorch, scikit-learn, XGBoost, LightGBM, CatBoost, ONNX, MLflow, DVC"
+    ],
+    "NLP": [
+        "NLTK, spaCy, Hugging Face Transformers, CoreNLP, AllenNLP, Stanza, Gensim, FastText, spaCy-transformers, flair",
+        "Sentence-BERT, FAISS, Haystack, LangChain, LlamaIndex, Hugging Face, Chroma, Weaviate, Milvus, Elasticsearch",
+        "Hugging Face Transformers, PyTorch, TensorFlow, QLoRA, PEFT, bitsandbytes, LoRA, Axolotl, DeepSpeed, Accelerate",
+        "LangChain, LlamaIndex, Hugging Face, Chroma, Weaviate, Pinecone, Qdrant, FAISS, Haystack, RAGatouille",
+        "CoreNLP, spaCy, NLTK, Stanza, UIMA, OpenNLP, scikit-learn, Gensim, FastText, Polyglot"
+    ],
+    "DL": [
+        "PyTorch, TensorFlow, Keras, ONNX, JAX, MXNet, Caffe2, Chainer, Theano, TorchScript",
+        "Hugging Face Transformers, PyTorch, TensorFlow, JAX, BERT, GPT, T5, LLaMA, Mistral, Falcon",
+        "QLoRA, bitsandbytes, LoRA, PyTorch, TensorFlow, PEFT, DeepSpeed, FSDP, Megatron-LM, vLLM",
+        "PyTorch, torchvision, TensorFlow, Keras CV, ONNX, OpenCV, Detectron2, YOLO, MMDetection, TIMM",
+        "PyTorch, DistributedDataParallel, TensorFlow, MirroredStrategy, Horovod, Ray, Kubeflow, MLflow, Weights & Biases, Optuna"
+    ],
+    "SEMANTIC": [
+        "Sentence-BERT, FAISS, Milvus, Elasticsearch, Weaviate, Qdrant, Pinecone, Chroma, LanceDB, txtai",
+        "RDF, SPARQL, OWL, SHACL, GraphDB, Neo4j, Blazegraph, Virtuoso, Stardog, RDFlib",
+        "LangChain, LlamaIndex, Hugging Face, Chroma, Weaviate, GPT, Claude, Cohere, Voyage AI, Instructor",
+        "GloVe, FastText, BERT, Sentence-BERT, RoBERTa, DistilBERT, MPNet, SimCSE, Angle, E5",
+        "WordNet, FrameNet, PropBank, VerbNet, ConceptNet, BabelNet, UMLS, SentiWordNet, NLTK, spaCy"
+    ]
+}
