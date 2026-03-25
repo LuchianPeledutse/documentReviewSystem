@@ -3,9 +3,24 @@ This system is intended to give help to improve educational learning plans. By g
 ## Introduction
 This system is based no RAG
 ## Retriever module results
-Single retriever model
-| Header 1 | Header 2 |
-|----------|----------|
-| Row 1    |   Row 2  |
+Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) with naive chunking  
+<table>
+  <tr>
+    <th></th>
+    <th>Mean precision@10</th>
+    <th>Mean Average precision@10</th>
+    <th>Mean Reciprocal Rank</th>
+  </tr>
+  <tr>
+    <th>Row A</th>
+    <td>Cell A1</td>
+    <td>Cell A2</td>
+  </tr>
+  <tr>
+    <th>Row B</th>
+    <td>Cell B1</td>
+    <td>Cell B2</td>
+  </tr>
+</table>
 ## Data to reproduce results
 Here you can find data to reproduce work results
