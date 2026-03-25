@@ -157,7 +157,7 @@ class RetrieverModule:
     def vector_index(self):
         return self.vector_database.vector_index
 
-    def retrieve(self, text: str) -> List[Tuple[int, str]]:
+    def retrieve(self, text: str) -> List[Tuple[int, str, int]]:
         """
         Given text retrieves the indicies from faiss database and chunks from postgres database
         Each index relates to its chunk, respectively
@@ -176,5 +176,4 @@ class RetrieverModule:
 class AugmentationModule:
     def __init__(self, prompt: str):
         pass
-
 "--------------------------------------------------------------------------------"
