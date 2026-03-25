@@ -13,5 +13,5 @@ def average_precision(values: List[int], true_label: int) -> float:
 
 def rr(values: List[int], true_label: int) -> float:
     np_values = np.array(values, dtype=np.int32) if type(values) != np.ndarray else values
-    first_rank = (np.where(np_values == true_label)[0] + 1).tolist()[0]
-    return 1/first_rank
+    first_rank = (np.where(np_values == true_label)[0] + 1).tolist()
+    return 0 if len(first_rank) == 0 else 1/first_rank[0]
