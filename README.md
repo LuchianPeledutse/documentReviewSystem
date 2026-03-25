@@ -18,9 +18,22 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <td>0.411</td>
   </tr>
   <tr>
-    <th>Row B</th>
-    <td>Cell B1</td>
-    <td>Cell B2</td>
+    <th>Chunk size 600</th>
+    <td>0.5</td>
+    <td>0.432</td>
+    <td>0.75</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1050</th>
+    <td>0.46</td>
+    <td>0.362</td>
+    <td>0.657</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1800</th>
+    <td>0.485</td>
+    <td>0.409</td>
+    <td>0.667</td>
   </tr>
   <tr>
     <th></th>
