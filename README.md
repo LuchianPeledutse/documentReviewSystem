@@ -12,14 +12,18 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <th>Mean Reciprocal Rank</th>
   </tr>
   <tr>
-    <th>Row A</th>
-    <td>Cell A1</td>
-    <td>Cell A2</td>
+    <th>Chunk size 300</th>
+    <td>0.435</td>
+    <td>0.326</td>
+    <td>0.411</td>
   </tr>
   <tr>
     <th>Row B</th>
     <td>Cell B1</td>
     <td>Cell B2</td>
+  </tr>
+  <tr>
+    <th></th>
   </tr>
 </table>
 ## Data to reproduce results
