@@ -30,13 +30,16 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <td>0.657</td>
   </tr>
   <tr>
+    <th>Chunk size 1350</th>
+    <td>0.495</td>
+    <td>0.434</td>
+    <td>0.676</td>
+  </tr>
+  <tr>
     <th>Chunk size 1800</th>
     <td>0.485</td>
     <td>0.409</td>
     <td>0.667</td>
-  </tr>
-  <tr>
-    <th></th>
   </tr>
 </table>
 ## Data to reproduce results
