@@ -42,5 +42,28 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <td>0.667</td>
   </tr>
 </table>
-## Data to reproduce results
+### Data to reproduce results
 Here you can find data to reproduce work results
+## NER models results
+<table>
+  <tr>
+    <th></th>
+    <th>Elman RNN</th>
+    <th>LSTM</th>
+    <th>GRU</th>
+    <th>BERT</th>
+  </tr>
+  <tr>
+    <th>Bidirectional = True | F1-score</th>
+    <td>0.5</td>
+    <td>0.5</td>
+    <td>0.5</td>
+    <td>0.5</td>
+  </tr>
+  <tr>
+    <th>Bidirectional = False | F1-score</th>
+    <td>0.5</td>
+    <td>0.5</td>
+    <td>0.5</td>
+    <td>0.5</td>
+</tr>
