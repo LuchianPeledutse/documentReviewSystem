@@ -42,8 +42,9 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <td>0.667</td>
   </tr>
 </table>
-### Data to reproduce results
+## Reproduction of retriever results
 Here you can find data to reproduce work results
+
 ## NER models results
 <table>
   <tr>
