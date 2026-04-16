@@ -57,29 +57,29 @@ NER models were trained to extract technologies and concepts from russian univer
 <table>
   <tr>
     <th></th>
-    <th>Elman RNN</th>
-    <th>LSTM</th>
-    <th>GRU</th>
-    <th>BERT</th>
+    <th>Elman RNN (input_size = 1024, hidden_size = 256, num_layers = 2)</th>
+    <th>LSTM (input_size = 1024, hidden_size = 256, num_layers = 1)</th>
+    <th>GRU (input_size = 1024, hidden_size = 512, num_layers = 1)</th>
+    <th>BERT (input_size = 1024, hidden_size = 256, num_layers = 2)</th>
   </tr>
   <tr>
     <th>Bidirectional = True | F1-score</th>
     <td>0.5</td>
     <td>0.5</td>
     <td>0.5</td>
-    <td>0.5</td>
+    <td>0.506</td>
   </tr>
   <tr>
     <th>Bidirectional = False | F1-score</th>
-    <td>0.5</td>
-    <td>0.5</td>
-    <td>0.5</td>
+    <td>0.505</td>
+    <td>0.521</td>
+    <td>0.56</td>
     <td></td>
 </tr>
 <tr>
     <th>Training Time (hrs)</th>
-    <td>1.23</td>
-    <td>2.32</td>
-    <td>3.12</td>
-    <td>2.22</td>
+    <td>0.05</td>
+    <td>0.22</td>
+    <td>3.35</td>
+    <td>2.96</td>
 </tr>
