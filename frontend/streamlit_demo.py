@@ -33,7 +33,8 @@ with left_col:
                         extracted_doc_technologies = []
                         for page_text in page_texts:
                              # Here we employ the NER model
-                             extracted_doc_technologies.append("ML")
+                             current_page_technologies = requests.post(url = "http://127.0.0.1:8002/entities", json = {"text": page_text})
+                             extracted_doc_technologies.extend(current_page_technologies.json()["entities"])
                         retrieved_model = requests.post(url = "http://127.0.0.1:8001/chunks", 
                                                         json = {"text": "NLP, ML, LLMs, retriever, matrix operations, Spline methods"})
                         retrieved_chunks = retrieved_model.json()["chunks"]
@@ -41,7 +42,8 @@ with left_col:
                         extracted_knowledge_base_technologies = []
                         for chunk in retrieved_chunks:
                             # Here we employ NER model
-                            extracted_knowledge_base_technologies.append("LLM")
+                            current_page_technologies = requests.post(url = "http://127.0.0.1:8002/entities", json = {"text": chunk})
+                            extracted_knowledge_base_technologies.extend(current_page_technologies.json()["entities"])
                         all_technologies = extracted_doc_technologies + extracted_knowledge_base_technologies
                         llm_suggestions = requests.post("http://127.0.0.1:8000/suggestions",
                                                         json = {"string_technologies": " ".join(all_technologies)})
