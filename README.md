@@ -78,7 +78,7 @@ NER models were trained to extract technologies and concepts from russian univer
 </tr>
 <tr>
     <th>Training Time (hrs)</th>
-    <td>0.05</td>
+    <td>bidirectional(8.1) | unidirectional(0.05)</td>
     <td>0.22</td>
     <td>3.35</td>
     <td>2.96</td>
