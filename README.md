@@ -1,7 +1,7 @@
 # Document review system
 This system is intended to give help to improve educational learning plans. By giving the learning plan as input to the system, user gets knowledge on how to improve the learning plan based on the information (e.g. results from recent articles) from the knowledge base.
 ## Introduction
-This system is based no RAG: when a learning plan is loaded to backend, key technologies are extracted from documents using NER model (see section on NER model below). The extracted technologies are than packed into a single string and further into embedding space using [Snowflake's Arctic-embed-1-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) model. Chunks from knowledge base are extracted based on similarty score with embedded technologies. The system returns 3 pieces of information:
+This system is based on RAG: when a learning plan is loaded to backend, key technologies are extracted from documents using NER model (see section on NER model below). The extracted technologies are than packed into a single string and further into embedding space using [Snowflake's Arctic-embed-1-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) model. Chunks from knowledge base are extracted based on similarty score with embedded technologies. The system returns 3 pieces of information:
 - Technologies extracted from the learning plan itself
 - Technologies extracted from relevant (most similiar) knowledge base chunks
 - Suggested recommendations for improving learning plan (suggestions are based on parametric GigaChat knowledge)
