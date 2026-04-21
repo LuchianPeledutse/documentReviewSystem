@@ -40,10 +40,13 @@ class TextEmbedding:
             normalized_embeddings = nn.functional.normalize(docs_embeddings, p=2.0, dim=1).detach().cpu().numpy()
             yield normalized_embeddings
 
-
-
 # FUNCTIONS
 # ---------
+
+def extract_pages_from_pdf(pdf_file) -> List[str]:
+    """Extract text from each page of PDF, return list of page texts."""
+    reader = PdfReader(stream = pdf_file)
+    return [page.extract_text() or "" for page in reader.pages]
 
 def chunk_pdf_file_pages(pdf_path: str, chunk_length: str) -> List[List]:
     """
