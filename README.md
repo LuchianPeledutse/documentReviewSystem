@@ -64,7 +64,7 @@ NER models were trained to extract technologies and concepts from russian univer
   </tr>
   <tr>
     <th>Bidirectional = True | F1-score</th>
-    <td>0.5</td>
+    <td>0.532</td>
     <td>0.5</td>
     <td>0.5</td>
     <td></td>
