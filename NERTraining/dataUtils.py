@@ -31,10 +31,13 @@ def pages_with_annotations(folder_path: str = ".\\TrainData") -> List[Tuple[str,
                 annotations_rectangles = list(annot.rect for annot in current_page.annots())
                 for rect in annotations_rectangles:
                     # Find entity text to find its span
-                    entity_text = current_page.get_textbox(rect)
+                    entity_text = current_page.get_text("text", clip = rect).strip()
                     # Find that span to add to data unit
-                    entity_span = re.search(re.escape(entity_text), current_text).span()
-                    spans.append(entity_span)
+                    try:
+                        entity_span = re.search(entity_text, current_text).span()
+                        spans.append(entity_span)
+                    except:
+                        pass
                 data_list.append((current_text, tuple(spans)))
     return data_list
 
