@@ -53,8 +53,9 @@ Here you can find data to reproduce work results
 NER models were trained to extract technologies and concepts from russian university courses syllabi. Syllabi are pdf documents that contain from 20 to 30 pages of information on a specific discipline (each document corresponds to a particular university course). The documents were manually annotated in a BIO format to solve single-entity NER problem. The syllabi dataset can be found [at my HF profile](https://huggingface.co/surpassed). Model evaluations are provided for several lengths of training set (2, 10, 25) to give a perspective on how the number of documents used affects the training time and end results. Models are evaluated using a single validation syllabus document containing 28 pages.
 
 
-**Evaluation table for training set of length 2**    
-The models were trainined on NVIDIA GeForce GTX 1650 with 4 gb VRAM
+**Evaluation table for training set of length 2**
+The **evaluation** is performened on a single separate syllabi
+The models were trainined on **NVIDIA GeForce GTX 1650** with **4 gb VRAM**
 <table>
   <tr>
     <th></th>
