@@ -3,7 +3,7 @@ import re
 import uuid
 import json
 import warnings
-from typing import List, Tuple, Dict, Callable
+from typing import List, Tuple, Dict, Callable, Optional
 
 warnings.filterwarnings("ignore")
 
@@ -97,6 +97,7 @@ class VectorDb:
             id: Mapped[int] = mapped_column(primary_key = True)
             content: Mapped[str]
             label: Mapped[int]
+            summary: Mapped[str]
         # Create table in postgres database and save it as a model
         Base.metadata.create_all(relational_db_engine)
         self.Chunk = Chunk
@@ -117,7 +118,7 @@ class VectorDb:
         faiss.write_index(self.vector_index, save_path)
         print(f"Vector index saved at {save_path}")
 
-    def load_chunks(self, chunks: List[str], label: int, batch_size: int = 3) -> None:
+    def load_chunks(self, chunks: List[str], label: int, summary: str = "-", batch_size: int = 3) -> None:
         """
         Embeds chunks and loads them to faiss vector database
         Chunks, their label, and corresponding ids are saved to relational database
@@ -139,14 +140,11 @@ class VectorDb:
         # load chunks with their corresponding ids and labels
         with Session(self.relational_db_engine) as session:
             chunk_models = [
-                self.Chunk(id=VI_total + chunk_idx, content=chunks[chunk_idx], label=label)
+                self.Chunk(id=VI_total + chunk_idx, content=chunks[chunk_idx], label=label, summary=summary) # Add parameter summary
                 for chunk_idx in range(N_total)
             ]
             session.add_all(chunk_models)
             session.commit()
-        
-        
-        
     
 class RetrieverModule:
     def __init__(self, vector_database: VectorDb, k: int = 10):
@@ -176,4 +174,5 @@ class RetrieverModule:
 class AugmentationModule:
     def __init__(self, prompt: str):
         pass
+    
 "--------------------------------------------------------------------------------"
