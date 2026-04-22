@@ -36,13 +36,91 @@ Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowfla
     <th>Chunk size 1350</th>
     <td>0.495</td>
     <td>0.434</td>
-    <td>0.676</td>
+    <te>0.676</td>
   </tr>
   <tr>
     <th>Chunk size 1800</th>
     <td>0.485</td>
     <td>0.409</td>
     <td>0.667</td>
+  </tr>
+</table>
+Here are the retriever results with summarization metadata for chunking
+<table>
+  <tr>
+    <th></th>
+    <th>Mean precision@10</th>
+    <th>Mean Average precision@10</th>
+    <th>Mean Reciprocal Rank</th>
+  </tr>
+  <tr>
+    <th>Chunk size 300</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 600</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1050</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1350</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1800</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+</table>
+Here are the retriever results with cross-encoder and summarization
+<table>
+  <tr>
+    <th></th>
+    <th>Mean precision@10</th>
+    <th>Mean Average precision@10</th>
+    <th>Mean Reciprocal Rank</th>
+  </tr>
+  <tr>
+    <th>Chunk size 300</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 600</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1050</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1350</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <th>Chunk size 1800</th>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
   </tr>
 </table>
 
@@ -53,8 +131,8 @@ Here you can find data to reproduce work results
 NER models were trained to extract technologies and concepts from russian university courses syllabi. Syllabi are pdf documents that contain from 20 to 30 pages of information on a specific discipline (each document corresponds to a particular university course). The documents were manually annotated in a BIO format to solve single-entity NER problem. The syllabi dataset can be found [at my HF profile](https://huggingface.co/surpassed). Model evaluations are provided for several lengths of training set (2, 10, 25) to give a perspective on how the number of documents used affects the training time and end results. Models are evaluated using a single validation syllabus document containing 28 pages.
 
 
-**Evaluation table for training set of length 2**
-The **evaluation** is performened on a single separate syllabi
+**Evaluation table for training set of length 2**    
+The **evaluation** is performened on a single separate syllabus    
 The models were trainined on **NVIDIA GeForce GTX 1650** with **4 gb VRAM**
 <table>
   <tr>
