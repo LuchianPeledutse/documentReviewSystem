@@ -20,6 +20,7 @@ from sqlalchemy import Text, Integer, select
 from sqlalchemy.engine.base import Engine
 from sqlalchemy.orm import Session, DeclarativeBase, Mapped, mapped_column
 
+from sentence_transformers import CrossEncoder
 from transformers import AutoModel, AutoTokenizer
 
 EMBEDDING_MODEL_NAME = 'Snowflake/snowflake-arctic-embed-l-v2.0'
@@ -147,9 +148,10 @@ class VectorDb:
             session.commit()
     
 class RetrieverModule:
-    def __init__(self, vector_database: VectorDb, k: int = 10):
-        self.vector_database = vector_database
+    def __init__(self, vector_database: VectorDb, k: int = 10, cross_encoder: CrossEncoder | bool = False):
         self.k = k
+        self.cross_encoder = cross_encoder
+        self.vector_database = vector_database
     
     @property
     def vector_index(self):
@@ -160,15 +162,20 @@ class RetrieverModule:
         Given text retrieves the indicies from faiss database and chunks from postgres database
         Each index relates to its chunk, respectively
         """ 
-        vector_text = self.vector_database.embedding_function(["query: " + text],
-                                                              device = "cpu")
+        vector_text = self.vector_database.embedding_function(["query: " + text], device = "cpu")
         search_result = self.vector_index.search(vector_text, self.k)
         closest_rows = []
         for idx in search_result[1].flatten().tolist():
             statement = select(self.vector_database.Chunk).where(self.vector_database.Chunk.id == idx)
             with Session(self.vector_database.relational_db_engine) as session:
                 selected_row = session.execute(statement).all()
-                closest_rows.append((selected_row[0][0].id, selected_row[0][0].content, selected_row[0][0].label))
+                closest_rows.append((selected_row[0][0].id, selected_row[0][0].content, selected_row[0][0].label, selected_row[0][0].summary))
+        if self.cross_encoder:
+            query = text
+            passages = [row[1] for row in closest_rows]
+            cross_encoder_ranks = self.cross_encoder.rank(query, passages)
+            reranked_rows = [closest_rows[idx] for idx in [the_dict["corpus_id"] for the_dict in cross_encoder_ranks]]
+            closest_rows = reranked_rows
         return closest_rows
 
 class AugmentationModule:
