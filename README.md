@@ -6,7 +6,15 @@ This system is based on RAG: when a learning plan is loaded to backend, key tech
 - Technologies extracted from relevant (most similiar) knowledge base chunks
 - Suggested recommendations for improving learning plan (suggestions are based on parametric GigaChat knowledge)
 ## Retriever module results
-Retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) with naive chunking  
+Retriever module is implemented in three steps that further facilitate experiments. The three construction steps are the following:        
+- Loading chunks into database without any metadata and then retrieving them with retriever model [Snowflake's Arctic-embed-l-v2.0](https://huggingface.co/Snowflake/snowflake-arctic-embed-l-v2.0) (naive chunking)
+- Loading chunks into database with metadata and then retrieving with the same Snowflake's Arctic-embed-l-v2.0
+- Loading chunks into database with metadata and then retrieving with Snowflake's Arctic-embed-l-v2.0 and rerank with cross-encoder [ms-macro-MiniLM-L6-v2](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2)
+
+The following metrics were chosen: 
+1. Precision (easily interpreted as the ratio of relevant documents in the retrieved documents)
+2. -
+
 <table>
   <tr>
     <th></th>
