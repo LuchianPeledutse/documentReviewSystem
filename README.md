@@ -12,9 +12,9 @@ Retriever module is implemented in three steps that further facilitate experimen
 - Loading chunks into database with metadata and then retrieving with Snowflake's Arctic-embed-l-v2.0 and rerank with cross-encoder [ms-macro-MiniLM-L6-v2](https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2)
 
 The following metrics were chosen: 
-1. Precision (easily interpreted as the ratio of relevant documents in the retrieved documents)
-2. -
-
+1. **Precision** (easily interpreted as the ratio of relevant documents in the retrieved documents)
+2. **Mean Reciprocal Rank** shows how close the first relevant document to the first place in retriever results
+3. **Mean average precision** which takes into account both the ratio of relevant documents and their positions relevant to the first position   
 <table>
   <tr>
     <th></th>
@@ -44,7 +44,7 @@ The following metrics were chosen:
     <th>Chunk size 1350</th>
     <td>0.495</td>
     <td>0.434</td>
-    <te>0.676</td>
+    <td>0.676</td>
   </tr>
   <tr>
     <th>Chunk size 1800</th>
