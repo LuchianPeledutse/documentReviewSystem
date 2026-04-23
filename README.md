@@ -13,8 +13,8 @@ Retriever module is implemented in three steps that further facilitate experimen
 
 The following metrics were chosen: 
 1. **Precision** (easily interpreted as the ratio of relevant documents in the retrieved documents)
-2. **Mean Reciprocal Rank** shows how close the first relevant document to the first place in retriever results
-3. **Mean average precision** which takes into account both the ratio of relevant documents and their positions relevant to the first position   
+2. **Mean Reciprocal Rank** (shows how close the first relevant document to the first place in retriever results)
+3. **Mean average precision** (which takes into account both the ratio of relevant documents and their positions relevant to the first position)   
 <table>
   <tr>
     <th></th>
