@@ -14,7 +14,7 @@ Retriever module is implemented in three steps that further facilitate experimen
 The following metrics were chosen: 
 1. **Precision** (easily interpreted as the ratio of relevant documents in the retrieved documents)
 2. **Mean Reciprocal Rank** (shows how close the first relevant document to the first place in retriever results)
-3. **Mean average precision** (which takes into account both the ratio of relevant documents and their positions relevant to the first position)   
+3. **Mean average precision** (takes into account both the ratio of relevant documents and their positions relevant to the first position)   
 <table>
   <tr>
     <th></th>
@@ -133,8 +133,17 @@ Here are the retriever results with cross-encoder and summarization
 </table>
 
 ## Reproduction of retriever results
-Here you can find data to reproduce work results
-
+To reproduce naive retrieving results follow these steps:
+- Download postgresql from this [link](https://www.postgresql.org/download/)
+- Add postgres bin path to OS environmental variables
+- Download naive_chunks_db.sql from this [google drive folder](https://drive.google.com/drive/folders/1wa8_6vqcSkKhPh2rlizgYRxiGkfW18O_?hl=ru)
+- Create database and name it "your_database_name"
+- Recreate the database using the following script:
+```bash
+psql -U postgres -d < naive_chunks_db.sql
+```
+Then enter the that you set when downloading postgres.
+- Run the Notebook in repository
 ## NER models results
 NER models were trained to extract technologies and concepts from russian university courses syllabi. Syllabi are pdf documents that contain from 20 to 30 pages of information on a specific discipline (each document corresponds to a particular university course). The documents were manually annotated in a BIO format to solve single-entity NER problem. The syllabi dataset can be found [at my HF profile](https://huggingface.co/surpassed). Model evaluations are provided for several lengths of training set (2, 10, 25) to give a perspective on how the number of documents used affects the training time and end results. Models are evaluated using a single validation syllabus document containing 28 pages.
 
