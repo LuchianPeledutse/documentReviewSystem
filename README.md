@@ -140,7 +140,7 @@ To reproduce naive retrieving results follow these steps:
 - Create database and name it "your_database_name"
 - Recreate the database using the following script:
 ```bash
-psql -U postgres -d < naive_chunks_db.sql
+psql -U postgres -d "your_database_name" < naive_chunks_db.sql
 ```
 Then enter the that you set when downloading postgres.
 - Run the Notebook in repository
