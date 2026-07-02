@@ -181,5 +181,3 @@ class RetrieverModule:
 class AugmentationModule:
     def __init__(self, prompt: str):
         pass
-    
-"--------------------------------------------------------------------------------"

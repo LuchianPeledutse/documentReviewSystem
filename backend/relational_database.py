@@ -23,7 +23,7 @@ DEVICE = "cpu"
 DB_PASSWORD = os.getenv("DB_PASSWORD")
 engine = create_engine(f"postgresql://postgres:{DB_PASSWORD}@localhost/prototypedocumentreviewsystem")
 
-index = faiss.read_index("C:\\main\\GitHub\\documentReviewSystem\\project_data\\initial_vector_db.index")
+# index = faiss.read_index("C:\\main\\GitHub\\documentReviewSystem\\project_data\\initial_vector_db.index")
 
 text_embedding = TextEmbedding(model_name='Snowflake/snowflake-arctic-embed-l-v2.0')
 model = text_embedding.model

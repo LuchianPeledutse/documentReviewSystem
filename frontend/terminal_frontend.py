@@ -56,11 +56,12 @@ if __name__ == "__main__":
   vectordb = VectorDb(relational_db_engine = engine,
                       embedding_function = embedding_model,
                       tablename = f'DOCS_CHUNK_SIZE_{CHUNK_LENGTH}')
-  vectordb.load_index("c:\\main\\GitHub\\documentReviewSystem\\experiments\\vector_dbs\\EMBD_CHUNKS_OF_SIZE_1350.index")
+  vectordb.load_index(f"c:\\main\\GitHub\\documentReviewSystem\\experiments\\vector_dbs\\EMBD_CHUNKS_OF_SIZE_{CHUNK_LENGTH}.index")
   retriever_module = RetrieverModule(vectordb)
   retriver_result = retriever_module.retrieve(model_based_technologies)
   retrieved_docs = [tup[1] for tup in retriver_result]
-  print(f"ВОЗМОЖНЫЕ УЛУЧШЕНИЯ НА ОСНОВЕ ВНУТРЕННИХ ДАННЫХ: {model.generate(get_suggestions_prompt(model_based_technologies, "".join([retrieved_docs])))}")
+  print(f"Extracted technologies: {model_based_technologies}")
+  print(f"Retrieved docs:\n{retrieved_docs}")
 
 
 

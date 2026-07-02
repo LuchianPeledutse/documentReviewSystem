@@ -53,84 +53,6 @@ The following metrics were chosen:
     <td>0.667</td>
   </tr>
 </table>
-Here are the retriever results with summarization metadata for chunking
-<table>
-  <tr>
-    <th></th>
-    <th>Mean precision@10</th>
-    <th>Mean Average precision@10</th>
-    <th>Mean Reciprocal Rank</th>
-  </tr>
-  <tr>
-    <th>Chunk size 300</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 600</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1050</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1350</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1800</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-</table>
-Here are the retriever results with cross-encoder and summarization
-<table>
-  <tr>
-    <th></th>
-    <th>Mean precision@10</th>
-    <th>Mean Average precision@10</th>
-    <th>Mean Reciprocal Rank</th>
-  </tr>
-  <tr>
-    <th>Chunk size 300</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 600</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1050</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1350</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th>Chunk size 1800</th>
-    <td>-</td>
-    <td>-</td>
-    <td>-</td>
-  </tr>
-</table>
 
 ## Reproduction of retriever results
 To reproduce naive retrieving results follow these steps:
@@ -142,7 +64,7 @@ To reproduce naive retrieving results follow these steps:
 ```bash
 psql -U postgres -d "your_database_name" < naive_chunks_db.sql
 ```
-- Download naive vector dbs from this folder [google_drive_folder](https://drive.google.com/drive/folders/1wa8_6vqcSkKhPh2rlizgYRxiGkfW18O_?hl=ru)
+- Download naive vector dbs from this folder [google_drive_folder](https://drive.google.com/drive/folders/1wa8_6vqcSkKhPh2rlizgYRxiGkfW18O_?hl=ru) and save them in vector_dbs folder
 - Make sure you have db password set as DB_PASSWORD environmental variable
 - Make sure you have db name set as DB_NAME environmental variable
 - Run the Notebook best_naive_chunk_size.ipynb
